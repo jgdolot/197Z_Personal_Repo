@@ -117,4 +117,5 @@ train_dict_coco = label_utils.build_label_dictionary_coco(
 ```
 
 ###And that's it for my progress!
+
 For posterity, I was initially planning to use Yolov5 as my object detection model.
