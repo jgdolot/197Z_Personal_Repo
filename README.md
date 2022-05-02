@@ -7,6 +7,9 @@ Made as a requirement for EEE 197Z
 ### What is in this repo
 Within this repo are primarily the python files related to processing Datasets-- I primarily worked with the notebook file so feel free to look through it.
 
+### What is NOT in this repo
+Obviously, test.py and train.py and all other object detection model-related assets are not in this repo. Additionally, the 'drinks' dataset is also not included in this repo.
+
 ### Why did I not finish?
 The major problem encountered was finding a way to convert the given dataset from *VGG Image Annotation format* to *COCO format*. I explored and researched a lot of ways to do so which all proved to be challenging since the implementation of this specific dataset is quite different than other references. Aside from using VIA, this dataset was processed through wandb functions, unlike the provided PyTorch Object Detection Tutorial and other references online which showed a fairly direct way (through torch.utils.data, dictionary functions, etc.) of processing datasets.
 
