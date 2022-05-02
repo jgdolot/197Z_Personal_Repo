@@ -34,7 +34,7 @@ What we have right now is something like this (based on test_dict and train_dict
 ```
 
 ### On the bright side, I was able to accomplish making that dictionary
-After exploring and sifting through different solutions such as converting the whole "drinks" dataset to COCO through Roboflow, sorting the dataset folder itself, exploring the annotation apps in the VIA website, and a lot more, I realized I hadn't studied the actual demo files provided in this course-- to be specific, the `label_utils.py`. With the knowledge I gained from researching around the web, I edited two functions within the helper module:
+After exploring and sifting through different solutions such as converting the whole "drinks" dataset to COCO through **Roboflow**, sorting the dataset folder itself, exploring the annotation apps in the VIA website, and a lot more, I realized I hadn't studied the actual demo files provided in this course-- to be specific, the `label_utils.py`. With the knowledge I gained from researching around the web, I edited two functions within the helper module:
 
 ```
 def get_label_dictionary_coco(labels, keys):
