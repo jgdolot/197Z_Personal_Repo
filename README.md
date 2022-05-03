@@ -122,3 +122,29 @@ train_dict_coco = label_utils.build_label_dictionary_coco(
 ###And that's it for my progress!
 
 For posterity, I was initially planning to use Yolov5 as my object detection model.
+
+For presentation:
+```
+def get_label_dictionary_coco(labels, keys):
+    """Associate key (filename) to value (box coords, class)"""
+    ...
+        value = value.astype(np.float32)
+        target = {}
+        bndboxes = [value[0], value[2], value[1], value[3]]
+        target["boxes"] = [bndboxes]
+        target["labels"] = [value[4]]
+        target["image_id"] = int(label[0][:-4])
+        target["area"] = [(value[1]-value[0])*(value[3]-value[2])]
+        target["iscrowd"] = [0]
+        # filename is key
+        key = label[0]
+        dictionary[key] = target
+    ...
+    return dictionary
+
+def build_label_dictionary_coco(path):"
+    ...
+    dict = get_label_dictionary_coco(labels, keys)
+    ...
+    return dict
+```
