@@ -1,0 +1,24 @@
+torch>=1.8.11
+torchvision>=0.9.1
+torchaudio>=0.8.1
+numpy
+matplotlib
+librosa
+timm
+einops
+transformers
+wandb
+pytorch-lightning
+torchmetrics
+pysimplegui
+sounddevice
+validators
+
+#sudo apt-get install libasound2-dev libportaudio2 
+
+#scipy
+#Pillow
+#scikit-image
+#gradio
+#sentencepiece
+#accelerate
