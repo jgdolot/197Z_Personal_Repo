@@ -34,6 +34,8 @@ import librosa
 import sounddevice as sd
 import time
 import validators
+import einops
+from einops import rearrange, repeat, reduce
 from torchvision.transforms import ToTensor
 
 
@@ -46,7 +48,7 @@ def get_args():
     parser.add_argument("--hop-length", type=int, default=512)
     parser.add_argument("--wav-file", type=str, default=None)
     parser.add_argument("--checkpoint", type=str, default="data/speech_commands/checkpoints/trans-kws-best-acc.pt")
-    parser.add_argument("--gui", default=False, action="store_true")
+    parser.add_argument("--gui", default=True, action="store_true")
     parser.add_argument("--rpi", default=False, action="store_true")
     parser.add_argument("--threshold", type=float, default=0.6)
     args = parser.parse_args()
@@ -151,6 +153,7 @@ if __name__ == "__main__":
             waveform = torch.from_numpy(waveform).unsqueeze(0)
             mel = ToTensor()(librosa.power_to_db(transform(waveform).squeeze().numpy(), ref=np.max))
         mel = mel.unsqueeze(0)
+        mel = rearrange(mel, "b c h (p1 w) -> b p1 (c h w)", p1=32)
         pred = scripted_module(mel)
         pred = torch.functional.F.softmax(pred, dim=1)
         max_prob =  pred.max()
