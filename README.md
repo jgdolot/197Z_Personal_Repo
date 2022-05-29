@@ -1,4 +1,5 @@
-#ASSIGNMENT 3
+**ASSIGNMENT 3**
+
 Instructions:
 
 1. install requirements.txt
