@@ -14,5 +14,5 @@ python3 train.py
 
 3. Open kws_infer
 ```
-python3 kws_infer.py --gui
+python3 kws_infer.py
 ```
