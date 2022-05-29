@@ -153,7 +153,7 @@ if __name__ == "__main__":
             waveform = torch.from_numpy(waveform).unsqueeze(0)
             mel = ToTensor()(librosa.power_to_db(transform(waveform).squeeze().numpy(), ref=np.max))
         mel = mel.unsqueeze(0)
-        mel = rearrange(mel, "b c h (p1 w) -> b p1 (c h w)", p1=32)
+        mel = rearrange(mel, "b c h (p1 w) -> b p1 (c h w)", p1=32) ##<=================================================================================================
         pred = scripted_module(mel)
         pred = torch.functional.F.softmax(pred, dim=1)
         max_prob =  pred.max()
