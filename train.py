@@ -220,7 +220,7 @@ class KWSDataModule(LightningDataModule):
             #wavs.append(waveform)
 
         mels = torch.stack(mels)
-        mels = rearrange(mels, "b c h (p1 w) -> b p1 (c h w)", p1=32)
+        mels = rearrange(mels, "b c h (p1 w) -> b p1 (c h w)", p1=16)
         labels = torch.stack(labels)
         #wavs = torch.stack(wavs)
    
